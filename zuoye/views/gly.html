@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="add()" value="新增">
+    <table>
+        <% for (let o of data){%>
+        <tr>
+            <td><%=o.id%></td>
+            <td><%=o.coffee_name%></o></td>
+            <td><%=o.coffee_value%></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+<script>
+    function add(){
+        window.location.href="http://localhost:3000/add";
+    }
+</script>
+</html>

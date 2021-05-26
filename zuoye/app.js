@@ -14,6 +14,8 @@ var contactRouter = require('./routes/contact');
 var indexRouter = require('./routes/index');
 var servicesRouter = require('./routes/services');
 var userRouter = require('./routes/user');
+var glyRouter = require('./routes/gly');
+var addRouter = require('./routes/add');
 var app = express();
 
 // view engine setup
@@ -38,6 +40,8 @@ app.use('/contact',contactRouter);
 app.use('/',indexRouter);
 app.use('/services',servicesRouter);
 app.use('/user',userRouter);
+app.use('/gly',glyRouter);
+app.use('/add',addRouter);
 
 
 // catch 404 and forward to error handler
@@ -54,13 +58,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-var connection = mysql.createConnection({
-  host:'localhost',
-  user:'root',
-  password:'123456',
-  database:'aaa'
 });
 
 module.exports = app;

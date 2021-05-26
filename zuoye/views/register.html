@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html,body{background-color: chartreuse;}
+        .a1{
+            text-align: center;
+            padding-top: 20px;
+            }
+    </style>
 </head>
 <body>
-    <form action="?" method="POST">
-        <input type="text" name="name" placeholder="账号"/>
+    <form action="?" method="POST" class="a1">
+        账号:<input type="text" name="name" >
         <br/>
-        <input type="password" name="pass" placeholder="密码">
+        密码:<input type="password" name="pass" >
         <br/>
         <input type="submit" value="注册">
     </form>
