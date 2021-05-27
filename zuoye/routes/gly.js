@@ -20,8 +20,7 @@ db.sqlparam("insert into coffee(id,coffee_name,coffee_value) values(?,?,?)",[
     req.body.coffee_name,
     req.body.coffee_value
 ],(err,rows)=>{
-    console.log(err);
-    console.log(rows);
+    res.redirect('/')
 })
 });
 
