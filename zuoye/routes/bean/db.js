@@ -21,7 +21,9 @@ mysqlConnect.sql=function (query,callback) {
            callback(err,null);
            return;
        }
-       callback(null,rows,);
+       console.log(err);
+       console.log(rows);
+       callback(null,rows);
     });
 };
 mysqlConnect.sqlparam=function (query,param,callback) {

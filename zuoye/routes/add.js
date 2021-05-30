@@ -6,8 +6,8 @@ router.get('/',function(req,res,next){
 });
 
 router.post('/',(req,res)=>{
-    var insertSql = 'insert into hcx(id,pass,confirm_pass) values(?,?,?)';
-    connection.query(insertSql, [req.body.id,req.body.pass,req.body.confirm_pass], function (err, result, fields) {
+    var insertSql = 'insert into a(id,coffee_name,coffee_value) values(?,?,?)';
+    connection.query(insertSql, [req.body.id,req.body.coffee_name,req.body.coffee_value], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);

@@ -27,10 +27,10 @@ router.post('/',(req,res)=>{
         else {
          
             if (req.body.id=="kyr" && req.body.pass==1234) {
-              res.redirect('/index');
+              res.redirect('/gly');
             }
             else {
-              res.redirect('/gly');
+              res.redirect('/');
             }
         }
       }
