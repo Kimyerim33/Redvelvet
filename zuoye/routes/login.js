@@ -27,7 +27,7 @@ router.post('/',(req,res)=>{
         else {
          
             if (req.body.id=="kyr" && req.body.pass==1234) {
-              res.redirect('/gly');
+              res.redirect('/zsgc');
             }
             else {
               res.redirect('/');

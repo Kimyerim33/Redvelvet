@@ -1,8 +1,8 @@
 const mysql = require('mysql');
+var db = {};
 
-var mysqlConnect = {};
-
-var pool = mysql.createPool({
+db.query=function(sql,callback){
+   var con = mysql.createConnection({
     connectLimit:10,
     host: "localhost",
     port: "3306",
@@ -11,33 +11,25 @@ var pool = mysql.createPool({
     database: "coffee"
 });
 
-mysqlConnect.sql=function (query,callback) {
-    if(!query){
-        callback();
-        return;
-    }
-    pool.query(query,function (err,rows,fields) {
-       if(err){
-           callback(err,null);
-           return;
-       }
-       console.log(err);
-       console.log(rows);
-       callback(null,rows);
-    });
-};
-mysqlConnect.sqlparam=function (query,param,callback) {
-    if(!query){
-        callback();
-        return;
-    }
-    pool.query(query,param,function (err,rows,fields) {
-       if(err){
-           callback(err,null);
-           return;
-       }
-       callback(null,rows,);
-    });
-};
+con.query(sql,(err,results)=>{
+    callback(err,results);
+});
+con.end();
+}
 
-module.exports = mysqlConnect;
+db.queryParam=function (sql,param,callback) {
+    var con = mysql.createConnection({
+        connectLimit:10,
+        host: "localhost",
+        port: "3306",
+        user: "root",
+        password: "root",
+        database: "coffee"
+    });
+    con.query(sql,param,(err,results)=>{
+        callback(err,results);
+    });
+    con.end();
+}
+
+module.exports = db;

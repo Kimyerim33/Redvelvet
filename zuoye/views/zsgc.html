@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/zsgc" method="POST">
+        <input type="text" name="search" placeholder="搜索"/>
+        <input type="submit"/>
+     </form>
+    <input type="button"  value="add" id="add_button">
+    <table>
+        <% for (let o of data){%>
+        <tr>
+            <td><%=o.id%></td>
+            <td><%=o.coffee_name%></o></td>
+            <td><%=o.coffee_value%></td>
+            <td>
+                <input type="button" class="u" value="修改" data_id="<%=o.id %>"/>
+                <input type="button" class="d" value="删除" data_id="<%=o.id %>"/>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <script>
+    // function add(){
+    //     window.location.href="http://localhost:3000/add";
+    // }
+document.getElementById("add_button").onclick = function(){
+    window.location.href='/zsgc/add';
+}
+Array.from(document.getElementsByClassName("u")).forEach(i=>{
+    i.onclick = function(){
+       window.location.href="/zsgc/update/"+this.getAttribute('data_id');
+    }
+})
+</script>
+</body>
+</html>

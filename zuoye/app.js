@@ -14,8 +14,8 @@ var contactRouter = require('./routes/contact');
 var indexRouter = require('./routes/index');
 var servicesRouter = require('./routes/services');
 var userRouter = require('./routes/user');
-var glyRouter = require('./routes/gly');
-var addRouter = require('./routes/add');
+var zsgcRouter = require('./routes/zsgc');
+// var addRouter = require('./routes/add');
 var app = express();
 
 // view engine setup
@@ -27,10 +27,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-  secret:"123",
-  cookie:{maxAge:60000}
-}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', loginRouter);
@@ -40,8 +36,8 @@ app.use('/contact',contactRouter);
 app.use('/',indexRouter);
 app.use('/services',servicesRouter);
 app.use('/user',userRouter);
-app.use('/gly',glyRouter);
-app.use('/add',addRouter);
+app.use('/zsgc',zsgcRouter);
+// app.use('/add',addRouter);
 
 
 // catch 404 and forward to error handler
