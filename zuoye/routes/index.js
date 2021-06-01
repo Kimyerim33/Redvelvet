@@ -4,7 +4,7 @@ var db=require('./bean/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  db.query("select * from tab_work",(err,result)=>{
+  db.query("select * from a",(err,result)=>{
     res.render('index', { data:result});
   })
  

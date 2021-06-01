@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+var mysql = require('mysql');
 var db = {};
 
 db.query=function(sql,callback){
