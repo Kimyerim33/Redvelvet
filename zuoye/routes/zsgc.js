@@ -31,9 +31,11 @@ router.post('/add',(req,res)=>{
     })
 });
 
-router.get('/zsgc',(req,res)=>{
-    res.render('delete');
-});
+router.get('/del/:id',(req,res) => {
+    db.queryParam("delete from a where id=?",[req.params.id],(err,result)=>{
+        res.redirect('/zsgc')
+      })
+    });
 
 router.get('/update/:id',(req,res)=>{
     db.queryParam("select * from a where id=?",[req.params.id],(err,result)=>{
@@ -41,12 +43,16 @@ router.get('/update/:id',(req,res)=>{
     })
 });
 router.post('/update',(req,res)=>{
-    db.queryParam("update a set coffee_name=? or coffee_value=?  where id=?",[
-        req.body.id,
-        req.body.coffee_name,
-        req.body.coffee_value],(err,result)=>{
-        res.redirect('/zsgc');
-    })
+    var coffee_name=req.body.coffee_name;
+    var id = req.body.id;
+    var coffee_value = req.body.coffee_value;
+    db.queryParam("update a set coffee_name='"+coffee_name+"',coffee_value='"+coffee_value+"' where id="+id,function(err,result){
+        if(err){
+           req.end('修改失败:'+err);
+        }else{
+            res.redirect('/zsgc');
+        }
+    });
 })
 
 
