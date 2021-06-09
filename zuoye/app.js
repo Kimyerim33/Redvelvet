@@ -15,7 +15,7 @@ var indexRouter = require('./routes/index');
 var servicesRouter = require('./routes/services');
 var userRouter = require('./routes/user');
 var zsgcRouter = require('./routes/zsgc');
-// var addRouter = require('./routes/add');
+var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
@@ -37,6 +37,7 @@ app.use('/',indexRouter);
 app.use('/services',servicesRouter);
 app.use('/user',userRouter);
 app.use('/zsgc',zsgcRouter);
+app.use('/users',usersRouter);
 
 
 // catch 404 and forward to error handler

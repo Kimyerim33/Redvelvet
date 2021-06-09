@@ -22,7 +22,7 @@ router.post('/',(req,res)=>{
             return;
         } else {
           if(result == ''){
-            res.send('登录失败');
+            res.send('登录失败!请重新登录');
           }
         else {
          
@@ -30,7 +30,7 @@ router.post('/',(req,res)=>{
               res.redirect('/zsgc');
             }
             else {
-              res.redirect('/');
+              res.redirect('/users');
             }
         }
       }
