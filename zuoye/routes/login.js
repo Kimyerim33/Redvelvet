@@ -15,7 +15,7 @@ router.get('/', (req, res)=> {
 });
 
 router.post('/',(req,res)=>{
-      var selectSQL = "select id,pass from hcx where id = '" + req.body.id + "' and pass = " + req.body.pass + "";
+      var selectSQL = "select username,password from hcx where username = '" + req.body.username + "' and password = " + req.body.password + "";
     connection.query(selectSQL, function (err, result, fields) {
         if (err) {
             console.log('err', err);
@@ -26,7 +26,7 @@ router.post('/',(req,res)=>{
           }
         else {
          
-            if (req.body.id=="kyr" && req.body.pass==1234) {
+            if (req.body.username=="kyr" && req.body.password==1234) {
               res.redirect('/zsgc');
             }
             else {

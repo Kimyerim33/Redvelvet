@@ -4,27 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        html,body{background-color: chartreuse;}
-        .a1{
-            text-align: center;
-            padding-top: 20px;
-            }
-        .a2{
-            margin-right: 32px;
-        }
-    </style>
+    <title>注册</title>
+    <link rel="stylesheet" href="stylesheets/style1.css">
 </head>
 <body>
-    <form action="?" method="POST" class="a1">
-        账号:<input type="text" name="id" >
-        <br/>
-        密码:<input type="password" name="pass" >
-        <br/>
-        确认密码:<input type="password" name="confirm_pass" class="a2">
-        <br/>
-        <input type="submit" value="注册">
-    </form>
+    <div class="container">
+        <div class="header">
+            <h2>注册</h2>
+        </div>
+        <form id="form" class="form" action="/register" method="POST">
+            <div class="form-control">
+                <label for="username">用户名</label>
+                <input type="text" placeholder="用户名" id="username"  name="username"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">邮箱</label>
+                <input type="email" placeholder="请输有效入邮箱" id="email"  name="email"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">密码</label>
+                <input type="password" placeholder="密码" id="password" name="password">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">确认密码</label>
+                <input type="password" placeholder="确认密码" id="password2" name="password2">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <input type="submit" value="注册">
+        </form>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <div style="text-align:center;">
+    </div>
 </body>
 </html>

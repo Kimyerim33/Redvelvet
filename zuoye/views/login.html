@@ -4,34 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style >
-        html,body{background-color: aquamarine;}
+    <link rel="stylesheet" href="stylesheets/style1.css">
+    <title>登录</title>
+    <style>
         .b1{
             text-align: center;
-        }
-        .b3{
-            width: 200px;
-            height: 25px;
-        }
-        .b4{
-            width: 50px;
-        }
-        .b5{
-            text-decoration: none;
-            color: blueviolet;
         }
     </style>
 </head>
 <body>
-    <form action="?" method="POST" class="b1"> 
-        账号:<input type="id" name="id"/ class="b3">
-        <br/>
-        密码:<input type="password"/  name="pass" class="b3">
-        <br/>
-        <input type="submit"/ class="b4">
-        <a href="/register" target="_blank" class="b5">注册</a>
-        
-    </form>
+    <div class="container">
+        <div class="header">
+            <h2>登录</h2>
+        </div>
+        <form id="form" class="form" action="/login" method="POST">
+            <div class="form-control">
+                <label for="username">用户名</label>
+                <input type="text" placeholder="用户名" id="username"  name="username"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">密码</label>
+                <input type="password" placeholder="密码" id="password" name="password">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <input type="submit" value="登录" class="b1">
+            &emsp;&emsp;<a href="/register" target="_blank">注册</a>
+        </form>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <div style="text-align:center;">
+    </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ var session = require('express-session');
 var mysql = require('mysql');
 
 var loginRouter = require('./routes/login');
-var registerRouter=require('./routes/register');
+var registerRouter= require('./routes/register');
 var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var indexRouter = require('./routes/index');

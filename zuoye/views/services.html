@@ -12,6 +12,43 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="stylesheets/css/style-starter.css">
   </head>
+  <style>
+    .b1{
+        position: relative;
+        display: inline-block;
+    }
+    .b2{
+        background-color:rgb(127, 126, 128);
+        color:white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .b3{
+        display: none;
+        position: absolute;
+        background-color:black;
+        min-width: 160px;
+        box-shadow:0px 8px 16px 0px black;
+        z-index: 1;
+    }
+    .b3 a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .b3 a:hover{
+        background-color:green;
+    }
+    .b1:hover .b3{
+        display: block;
+    }
+    .b1:hover .b2{
+        background-color:gray;
+    }
+</style>
   <body>
 <!--header-->
 <header id="site-header" class="fixed-top">
@@ -44,7 +81,10 @@
                       <a class="nav-link" href="http://localhost:3000/Contact"><i class="contact icon"></i>联系我们</a>
                   </li>
                   <li class="nav-item @@login_active">
-                    <a class="nav-link" href="http://localhost:3000/login"><i class="login icon"></i>登录</a>
+                    <div class="b1">
+                        <button class="b2">个人中心</button>
+                        <div class="b3"><a class="nav-link" href="/">退出登陆</a></div>
+                        </div>
                   </li>
               </ul>
 

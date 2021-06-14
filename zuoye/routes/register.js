@@ -1,6 +1,5 @@
 let express = require('express');
 let router = express.Router();
-// let User = require('./bean/user1');
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -16,8 +15,8 @@ router.get('/',(req,res)=>{
 });
 
 router.post('/',(req,res)=>{
-    var insertSql = 'insert into hcx(id,pass,confirm_pass) values(?,?,?)';
-    connection.query(insertSql, [req.body.id,req.body.pass,req.body.confirm_pass], function (err, result, fields) {
+    var insertSql = 'insert into hcx(username,email,password,password2) values(?,?,?,?)';
+    connection.query(insertSql, [req.body.username,req.body.email,req.body.password,req.body.password2], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);
@@ -28,5 +27,7 @@ router.post('/',(req,res)=>{
         }
     });
     });
+
+
 
 module.exports = router;
